@@ -1,0 +1,37 @@
+<h2> Service List </h2>
+<div class="pull-right" style="padding-bottom: 20px;">
+  <%= link_to("新增服务", new_admin_service_path, class: "btn btn-primary btn-sm") %>
+</div>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Name</th>
+      <th>Price</th>
+      <th width="200">Description</th>
+      <th width="100"> Options</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @services.each do |service| %>
+      <tr>
+        <td>
+          <%= service.id %>
+        </td>
+
+        <td>
+          <%= service.title %>
+        </td>
+        <td>
+          <%= service.price %>
+        </td>
+        <td>
+          <%= service.description %>
+        </td>
+        <td>
+          <%= link_to("Edit", edit_admin_service_path(service)) %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

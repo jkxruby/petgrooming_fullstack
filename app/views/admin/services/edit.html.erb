@@ -1,0 +1,20 @@
+<h2> Edit Service </h2>
+
+<%= simple_form_for [:admin, @service] do |f| %>
+
+  <div class="group">
+    <%= f.input :title %>
+  </div>
+
+  <div class="group">
+    <%= f.input :description %>
+  </div>
+
+
+  <div class="group">
+    <%= f.input :price %>
+  </div>
+
+  <%= f.submit "Submit", data: { disable_with: "Submitting..." } %>
+
+<% end %>
