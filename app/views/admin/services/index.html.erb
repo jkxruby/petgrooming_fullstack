@@ -29,7 +29,8 @@
           <%= service.description %>
         </td>
         <td>
-          <%= link_to("Edit", edit_admin_service_path(service)) %>
+          <%= link_to("Edit", edit_admin_service_path(service)) %> |
+          <%= link_to("Destroy", admin_service_path(service), method: :delete, data: { :confirm => "Are you sure?"}) %>
         </td>
       </tr>
     <% end %>
