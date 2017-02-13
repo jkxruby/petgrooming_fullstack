@@ -1,3 +1,43 @@
 // Place all the styles related to the services controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.service-nav {
+  background-color: #f7f3e7;
+}
+.full-grooming {
+  padding-bottom: 150px;
+  padding-top: 50px;
+  padding-left: 100px;
+}
+
+.bath {
+  padding-left: 100px;
+  padding-top: 50px;
+}
+
+.styling {
+  padding-bottom: 150px;
+  padding-top: 50px;
+  padding-right: 100px;
+}
+
+.medical {
+  padding-right: 90px;
+  padding-top: 50px;
+}
+.icon img {
+  height: 50px;
+  width: 50px;
+}
+
+
+.bg1 {
+  background: url("https://ww1.sinaimg.cn/large/006tNbRwgy1fcomaf6s7pj31hc0eq44h.jpg") 100%;
+  padding-top: 130px;
+}
+
+.bg1 .comment {
+  background: #f7f3e7;
+  margin-top: 130px;
+  margin-bottom: 130px;
+}

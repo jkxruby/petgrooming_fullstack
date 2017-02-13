@@ -1,14 +1,35 @@
-<div class="row">
-  <% @products.each do |product| %>
-    <div class="col-xs-6 col-md-3">
-      <%= link_to product_path(product) do %>
+
+<% @products.each do |product| %>
+<div class="col-md-3 col-sm-6">
+    <span class="thumbnail">
+        <%= link_to product_path(product) do %>
         <% if product.image.present? %>
-          <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
-        <% else %>
-          <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+        <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
+    <% else %>
+        <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
         <% end %>
-      <% end %>
-      <%= product.title %> ￥ <%= product.price %>
-    </div>
-  <% end %>
+        <% end %>
+        <h4><%= product.title %></h4>
+        <div class="rating">
+            <span class="glyphicon glyphicon-star"></span>
+            <span class="glyphicon glyphicon-star"></span>
+            <span class="glyphicon glyphicon-star"></span>
+            <span class="glyphicon glyphicon-star"></span>
+            <span class="glyphicon glyphicon-star-empty"></span>
+        </div>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+        </p>
+        <hr class="line">
+        <div class="row">
+            <div class="col-md-6 col-sm-6">
+                <p class="price">
+                    <%= product.price %></p>
+            </div>
+            <div class="col-md-6 col-sm-6">
+                <button class="btn btn-info right">
+                    BUY ITEM</button>
+            </div>
+        </div>
+    </span>
 </div>
+<% end %>
