@@ -24,7 +24,7 @@ body{font-family: 'Quicksand', sans-serif;}
 	}
 
 	.thumbnail{
-		opacity:0.70;
+		opacity:0.95;
 		-webkit-transition: all 0.5s;
 		transition: all 0.5s;
 	}
@@ -62,8 +62,9 @@ button {    margin-top: 6px;
     border-color: #f6ab4a !important;
 	font-size:13px;
 	font-weight:600;
-}
 
+}
+ // /** siderbar css
 .sidebar {
   background-color: #482f30;
   color: #fff;
@@ -73,4 +74,24 @@ button {    margin-top: 6px;
 
 .product-content {
   margin-top: 80px;
+}
+
+.product_link a {
+  color: white;
+}
+
+.product_link a:hover {
+  color: #f6ab4a;
+}
+
+// 以上sidebar
+
+.category .fa {
+  color: #f6ab4a;
+  font-size: 14px;
+}
+
+.category p {
+  font-size: 16px;
+  color: #e4e4e4;
 }
