@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Pet-Grooming
+        </title>
+        <%= csrf_meta_tags %>
+
+        <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+        <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    </head>
+
+    <body>
+
+        <div class="container-fluid">
+            <%= render "common/navbar" %>
+            <div class="row product-nav">
+              <div class="col-sm-2 col-sm-offset-2">
+                <h4>Product</h4>
+              </div>
+              <div class="col-sm-2 col-sm-offset-5 text-center">
+                 <h5>Home > product</h5>
+              </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-2 col-sm-offset-1 sidebar">
+
+                  <h4 class="text-center">Your Basket <span class="fa fa-shopping-basket"></span></h4>
+                  <br>
+                  <br>
+                <div class="category">
+                  <h4 class="text-center">Categories</h4>
+                  <ul class="text-center list-unstyled">
+                    <li><h5><span class="fa fa-caret-right"></span>   Brushes</h5></li>
+                    <li><p><span class="fa fa-caret-right"></span>   Grooming Clippers</p></li>
+                    <li><p><span class="fa fa-caret-right"></span>   Grooming Combs</p></li>
+                    <li><p><span class="fa fa-caret-right"></span>   Grooming Rakes</p></li>
+                    <li><p><span class="fa fa-caret-right"></span>   Grooming Scissors</p></li>
+                    <li><p><span class="fa fa-caret-right"></span>   Grooming Supplies</p></li>
+                    <li><p><span class="fa fa-caret-right"></span>   Shedding Tools</p></li>
+                    <li><p><span class="fa fa-caret-right"></span>  Small Animal Grooming</p></li>
+
+                  </ul>
+                </div>
+
+                </div>
+
+                <div class="col-md-9 product-content">
+                    <%= yield %>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+</html>

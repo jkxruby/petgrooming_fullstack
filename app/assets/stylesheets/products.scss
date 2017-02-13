@@ -3,6 +3,12 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 @import url('https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700&subset=latin-ext,vietnamese');
+
+.product-nav {
+  background-color: #f7f3e7;
+  padding: 8px;
+}
+
 body{font-family: 'Quicksand', sans-serif;}
    h4{
     	font-weight: 600;
@@ -56,4 +62,15 @@ button {    margin-top: 6px;
     border-color: #f6ab4a !important;
 	font-size:13px;
 	font-weight:600;
+}
+
+.sidebar {
+  background-color: #482f30;
+  color: #fff;
+  margin-top: 80px;
+  padding-bottom: 250px;
+}
+
+.product-content {
+  margin-top: 80px;
 }

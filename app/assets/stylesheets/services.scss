@@ -3,6 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .service-nav {
   background-color: #f7f3e7;
+  padding: 8px;
 }
 .full-grooming {
   padding-bottom: 150px;
@@ -40,4 +41,8 @@
   background: #f7f3e7;
   margin-top: 130px;
   margin-bottom: 130px;
+}
+
+p {
+  font-family: Arial, Helvetica, sans-serif !important;
 }
