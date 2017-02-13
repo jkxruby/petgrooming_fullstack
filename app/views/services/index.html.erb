@@ -17,17 +17,18 @@
     <br>
 
     <div>
+      <% @services.limit(4).order('created_at DESC').each do |service| %>
         <div class="col-sm-3 col-sm-offset-1">
             <ul class="list-unstyled">
                 <li class="full-grooming">
-                    <h4 class="pull-right"><%= link_to("Full Grooming", service_path(1)) %>
+                    <h4 class="pull-right"><%= link_to("Full Grooming", service_path(service)) %>
                         <span class="icon"><img src="https://ww4.sinaimg.cn/large/006tNbRwgy1fcokzx4gatj302q02smx1.jpg" alt="icon-scissors"></span>
                     </h4>
 
                     <p class="pull-right">Your pet is in good hands with us! Let your favorite get the best care in our center.</p>
                 </li>
                 <li class="bath">
-                    <h4 class="pull-right"><%= link_to("Bath & Dry", service_path(2)) %>
+                    <h4 class="pull-right"><%= link_to("Bath & Dry", service_path(service)) %>
                         <span class="icon"><img src="https://ww2.sinaimg.cn/large/006tNbRwgy1fcol1xnb5ej302s02sjr9.jpg" alt="icon-bath"></span>
                     </h4>
                     <p class="pull-right">We use a big range of shampoos for all different coat types and breeds</p>
@@ -43,19 +44,20 @@
             <ul class="list-unstyled">
                 <li class="styling">
                     <h4 class="pull-left">
-                        <span class="icon"><img src="https://ww4.sinaimg.cn/large/006tNbRwgy1fcol5oimuwj302s02smx1.jpg" alt="icon-styling"></span><%= link_to("Styling", service_path(3)) %>
+                        <span class="icon"><img src="https://ww4.sinaimg.cn/large/006tNbRwgy1fcol5oimuwj302s02smx1.jpg" alt="icon-styling"></span><%= link_to("Styling", service_path(service)) %>
                     </h4>
                     <p class="pull-left">Our team of pet hair stylists is happy to make your animal look pretty and happy.
                     </p>
                 </li>
                 <li class="medical">
                     <h4 class="pull-left">
-                        <span class="icon"><img src="https://ww2.sinaimg.cn/large/006tNbRwgy1fcol9fjfeqj302s02s0sl.jpg" alt="icon-medical"></span><%= link_to("Medical Bath", service_path(4)) %></h4>
+                        <span class="icon"><img src="https://ww2.sinaimg.cn/large/006tNbRwgy1fcol9fjfeqj302s02s0sl.jpg" alt="icon-medical"></span><%= link_to("Medical Bath", service_path(service)) %></h4>
                     <p class="pull-left">Bathing in our vet bath, using an appropriate shampoo that is kind to pet’s skin.</p>
                 </li>
             </ul>
         </div>
     </div>
+    <% end %>
 </div>
 
 <div class="row bg1">
