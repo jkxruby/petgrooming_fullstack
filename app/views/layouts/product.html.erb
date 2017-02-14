@@ -29,8 +29,11 @@
                         <h4 class="text-center product_link" style="text-decoration: none;"><%= link_to("All the Product", products_path) %></h4>
                         <br>
 
-                        <h4 class="text-center">Your Basket
-                            <span class="fa fa-shopping-basket"></span>
+                        <h4 class="text-center basket">
+                        <%= link_to carts_path do  %>
+                              Your Basket
+                            <span class="fa fa-shopping-basket"></span> ( <%= current_cart.products.count %> )
+                            <% end %>
                         </h4>
                         <br>
                         <br>
