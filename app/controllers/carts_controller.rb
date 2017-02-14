@@ -3,5 +3,9 @@ class CartsController < ApplicationController
    current_cart.clean!
    flash[:warning] = "Deleted All"
    redirect_to carts_path
- end 
+ end
+
+ def checkout
+   @order = Order.new
+ end
 end
