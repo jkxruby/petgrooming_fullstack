@@ -18,7 +18,11 @@
     <div> Quantity : <%= @product.quantity %> </div>
     <div class="product-price"> $ <%= @product.price %> </div>
     <div class="pull-right">
+      <% if @product.quantity.present? && @product.quantity > 0 %>
       <%= link_to("Add to Basket", add_to_cart_product_path(@product), :method => :post, :class => "btn btn-lg") %>
+      <% else %>
+       We haven't this item
+     <% end %>
     </div>
   </div>
   </div>
