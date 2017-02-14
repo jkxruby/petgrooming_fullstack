@@ -7,16 +7,19 @@
     <% end %>
   </div>
   <div class="col-md-6">
+    <div class="container-fluid">
     <h2> <%= @product.title %> </h2>
-    <div style="height:100px;">
+
       <p>
         <%= @product.description %>
       </p>
-    </div>
-    <div> 数量 : <%= @product.quantity %> </div>
-    <div class="product-price"> ￥ <%= @product.price %> </div>
+
+
+    <div> Quantity : <%= @product.quantity %> </div>
+    <div class="product-price"> $ <%= @product.price %> </div>
     <div class="pull-right">
       <%= link_to("Add to Basket", "#", :class => "btn btn-lg") %>
     </div>
+  </div>
   </div>
 </div>

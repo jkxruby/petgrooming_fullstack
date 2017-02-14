@@ -1,7 +1,53 @@
-<div class="col-md-6">
-  <% if @service.image.present? %>
-    <%= image_tag(@service.image.medium.url, class: "thumbnail") %>
-  <% else %>
-    <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
-  <% end %>
+<div class="service-sidebar">
+    <div class="row">
+        <div class="col-sm-2">
+            <h4 class="text-center">Services List</h4>
+        </div>
+        <div class="col-sm-2 col-sm-offset-2">
+            <p>
+                <span class="fa fa-caret-right"></span>
+                Full Grooming</p>
+        </div>
+        <div class="col-sm-2">
+            <p>
+                <span class="fa fa-caret-right"></span>
+                Bath & Dry</p>
+        </div>
+        <div class="col-sm-2">
+
+            <p>
+                <span class="fa fa-caret-right"></span>
+                Styling</p>
+        </div>
+        <div class="col-sm-2">
+            <p>
+                <span class="fa fa-caret-right"></span>
+                Medical Bath</p>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-10 col-sm-offset-1">
+        <div class="service-image">
+            <% if @service.image.present? %>
+            <%= image_tag(@service.image.url, class: "thumbnail") %>
+        <% else %>
+            <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
+            <% end %>
+        </div>
+    </div>
+
+</div>
+
+<div class="row content">
+   <div class="col-sm-8 col-sm-offset-1">
+     <h4><%= @service.title %></h4>
+     <p><%= simple_format(@service.description) %></p>
+   </div>
+   <div class="col-sm-8">
+     <div class="pull-right">
+       <%= link_to("Make an Appoitment", "#", :class => "btn btn-lg") %>
+     </div>
+   </div>
 </div>

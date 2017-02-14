@@ -62,3 +62,29 @@ p {
 .panel:hover {
       box-shadow: 5px 0px 40px rgba(0,0,0, .2);
   }
+
+
+.service-sidebar {
+  background-color: #f7f3e7;
+  color: #fff;
+  padding: 10px 30px 10px 30px;
+}
+
+.service-sidebar .fa {
+  color: #f6ab4a;
+  font-size: 14px;
+}
+
+.service-sidebar p {
+  font-size: 14px;
+  color: #787878;
+  padding-top: 6px;
+}
+
+.service-sidebar h4 {
+  color: #222222;
+}
+
+.service-image {
+  text-align: center;
+}
