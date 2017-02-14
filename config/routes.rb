@@ -3,6 +3,10 @@ Rails.application.routes.draw do
   devise_for :users
   root 'welcome#index'
 
+  namespace :account do
+   resources :orders
+ end
+
   namespace :admin do
     resources :products
     resources :services
