@@ -28,7 +28,7 @@
               <%= link_to(cart_item.product.title, product_path(cart_item.product)) %>
             </td>
             <td>
-              <%= cart_item.product.price %>
+              $ <%= cart_item.product.price %>
             </td>
             <td>
               <%= cart_item.quantity %>
@@ -43,7 +43,7 @@
 
     <div class="total clearfix">
       <span class="pull-right">
-         <span> 总计 xxx RMB  </span>
+         <span> Total <%= render_cart_total_price(current_cart) %> USD  </span>
       </span>
     </div>
 
