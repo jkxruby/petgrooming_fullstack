@@ -19,7 +19,7 @@
                     <h4>Product</h4>
                 </div>
                 <div class="col-sm-2 col-sm-offset-5 text-center">
-                    <h5 class="home_link"><%= link_to("Home", root_path) %>
+                    <h5 class="home_link"><%= link_to("Home", root_path, :style => 'color: #f4ad53;') %>
                         > product</h5>
                 </div>
             </div>
@@ -47,14 +47,14 @@
                                 <li>
                                     <p>
                                         <span class="fa fa-caret-right"></span>
-                                        <%= link_to("All Products", products_path) %>
+                                        <%= link_to("All Products", products_path, :style => 'color:#fff; font-size:14px; text-decoration:none;') %>
                                     </p>
                                 </li>
                                 <% Category.all.each do |category| %>
                                 <li>
                                     <p>
                                         <span class="fa fa-caret-right"></span>
-                                        <%= link_to category.name, products_path(category: category.name), class: "link" %>
+                                        <%= link_to category.name, products_path(category: category.name), class: "link", :style => 'color:#fff; font-size:14px; text-decoration:none;' %>
                                     </p>
                                 </li>
                                 <% end %>
