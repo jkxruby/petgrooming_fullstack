@@ -19,7 +19,8 @@
                     <h4>Product</h4>
                 </div>
                 <div class="col-sm-2 col-sm-offset-5 text-center">
-                    <h5><%= link_to("Home", root_path) %> > product</h5>
+                    <h5><%= link_to("Home", root_path) %>
+                        > product</h5>
                 </div>
             </div>
             <div class="row">
@@ -30,9 +31,12 @@
                         <br>
 
                         <h4 class="text-center basket">
-                        <%= link_to carts_path do  %>
-                              Your Basket
-                            <span class="fa fa-shopping-basket"></span> ( <%= current_cart.products.count %> )
+                            <%= link_to carts_path do  %>
+                            Your Basket
+                            <span class="fa fa-shopping-basket"></span>
+                            (
+                            <%= current_cart.products.count %>
+                            )
                             <% end %>
                         </h4>
                         <br>
@@ -43,43 +47,17 @@
                                 <li>
                                     <p>
                                         <span class="fa fa-caret-right"></span>
-                                        Brushes</p>
+                                        <%= link_to("All Products", products_path) %>
+                                    </p>
                                 </li>
+                                <% Category.all.each do |category| %>
                                 <li>
                                     <p>
                                         <span class="fa fa-caret-right"></span>
-                                        Grooming Clippers</p>
+                                        <%= link_to category.name, products_path(category: category.name), class: "link" %>
+                                    </p>
                                 </li>
-                                <li>
-                                    <p>
-                                        <span class="fa fa-caret-right"></span>
-                                        Grooming Combs</p>
-                                </li>
-                                <li>
-                                    <p>
-                                        <span class="fa fa-caret-right"></span>
-                                        Grooming Rakes</p>
-                                </li>
-                                <li>
-                                    <p>
-                                        <span class="fa fa-caret-right"></span>
-                                        Grooming Scissors</p>
-                                </li>
-                                <li>
-                                    <p>
-                                        <span class="fa fa-caret-right"></span>
-                                        Grooming Supplies</p>
-                                </li>
-                                <li>
-                                    <p>
-                                        <span class="fa fa-caret-right"></span>
-                                        Shedding Tools</p>
-                                </li>
-                                <li>
-                                    <p>
-                                        <span class="fa fa-caret-right"></span>
-                                        Small Animal Grooming</p>
-                                </li>
+                                <% end %>
 
                             </ul>
                         </div>
