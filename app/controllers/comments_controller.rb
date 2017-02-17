@@ -33,7 +33,7 @@ class CommentsController < ApplicationController
         format.html { redirect_to @service, notice: 'Comment was successfully created.' }
         format.json { render :show, status: :created, location: @comment }
       else
-        format.html { render :new }
+        format.html { redirect_to @service, alert: 'You have to write some words' }
         format.json { render json: @comment.errors, status: :unprocessable_entity }
       end
     end
@@ -56,9 +56,11 @@ class CommentsController < ApplicationController
   # DELETE /comments/1
   # DELETE /comments/1.json
   def destroy
+    @service = Service.find(params[:service_id])
+    @comment = Comment.find(params[:id])
     @comment.destroy
     respond_to do |format|
-      format.html { redirect_to comments_url, notice: 'Comment was successfully destroyed.' }
+      format.html { redirect_to @service, notice: 'Comment was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

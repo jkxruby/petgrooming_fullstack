@@ -1,33 +1,56 @@
 <div class="row">
-  <div class="col-sm-6">
-    <% if @product.image.present? %>
-      <%= image_tag(@product.image.medium.url, class: "thumbnail") %>
+    <div class="col-sm-6">
+        <% if @product.image.present? %>
+        <%= image_tag(@product.image.medium.url, class: "thumbnail") %>
     <% else %>
-      <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
-    <% end %>
-  </div>
-  <div class="col-sm-5 col-md-offset-1">
-    <div class="container-fluid">
-    <h2> <%= @product.title %> </h2>
-
-      <p>
-        <%= @product.description %>
-      </p>
-
-
-    <div> Quantity : <%= @product.quantity %> </div>
-    <div> Category : <%= @product.category.name %> </div>
-    <div class="product-price"> $ <%= @product.price %> </div>
+        <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
+        <% end %>
     </div>
-    <br>
-    <br>
-    <div class="pull-right">
-      <% if @product.quantity.present? && @product.quantity > 0 %>
-      <%= link_to("Add to Basket", add_to_cart_product_path(@product), :method => :post, :class => "btn btn-lg") %>
-      <% else %>
-       We haven't this item
-     <% end %>
+    <div class="col-sm-5 col-md-offset-1">
+        <div class="container-fluid">
+            <h2>
+                <%= @product.title %>
+            </h2>
+
+            <p>
+                <%= @product.description %>
+            </p>
+
+            <div>
+                Quantity :
+                <%= @product.quantity %>
+            </div>
+            <div>
+                Category :
+                <%= @product.category.name %>
+            </div>
+            <div class="product-price">
+                $
+                <%= @product.price %>
+            </div>
+        </div>
+        <br>
+        <br>
+        <div class="pull-right">
+            <% if @product.quantity.present? && @product.quantity > 0 %>
+            <%= link_to("Add to Basket", add_to_cart_product_path(@product), :method => :post, :class => "btn btn-lg") %>
+        <% else %>
+            We haven't this item
+            <% end %>
+        </div>
     </div>
-  </div>
+</div>
+
+<div class="row review">
+  <div class="col-sm-10 col-sm-offset-1">
+    <h3 class="reviews_title">
+      <%= @product.reviews.count %> Reviews
+    </h3>
+    <hr>
+    <div id="reivews">
+      <%= render @product.reviews%>
+      <hr>
+      <%= render "reviews/form"%>
+    </div>
   </div>
 </div>
