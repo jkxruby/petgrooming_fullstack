@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :comments
   devise_for :users
   root 'welcome#index'
 
@@ -18,7 +19,9 @@ Rails.application.routes.draw do
       post :add_to_cart
     end
   end
-  resources :services
+  resources :services do
+    resources :comments
+  end
   resources :carts do
     collection do
       delete :clean
