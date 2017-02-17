@@ -17,8 +17,11 @@ Rails.application.routes.draw do
     member do
       post :add_to_cart
     end
+    resources :reviews
   end
-  resources :services
+  resources :services do
+    resources :comments
+  end
   resources :carts do
     collection do
       delete :clean
