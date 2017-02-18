@@ -1,10 +1,10 @@
 class ServicesController < ApplicationController
-  def index
-   @services = Service.all
+    def index
+        @services = Service.all
+     end
 
- end
-
- def show
-   @service = Service.find(params[:id])
- end
+    def show
+        @service = Service.find(params[:id])
+        @appointment = Appointment.new
+    end
 end

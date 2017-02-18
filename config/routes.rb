@@ -5,12 +5,14 @@ Rails.application.routes.draw do
 
   namespace :account do
    resources :orders
+   resources :appointments
  end
 
   namespace :admin do
     resources :products
     resources :services
     resources :categories
+    resources :appointments
   end
 
   resources :products do
@@ -21,6 +23,7 @@ Rails.application.routes.draw do
   end
   resources :services do
     resources :comments
+    resources :appointments
   end
   resources :carts do
     collection do

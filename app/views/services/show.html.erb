@@ -41,27 +41,51 @@
 </div>
 
 <div class="row content">
-   <div class="col-sm-8 col-sm-offset-1">
-     <h4><%= @service.title %></h4>
-     <p><%= simple_format(@service.description) %></p>
-   </div>
-   <div class="col-sm-8">
-     <div class="pull-right">
-       <%= link_to("Make an Appoitment", "#", :class => "btn btn-lg") %>
-     </div>
-   </div>
-</div>
-
-<div class="row comment">
-  <div class="col-sm-10 col-sm-offset-1">
-<h3 class="comments_title">
-      <%= @service.comments.count %> Comments
-    </h3>
-    <hr>
-    <div id="comments">
-      <%= render @service.comments%>
-      <hr>
-      <%= render "comments/form"%>
+    <div class="col-sm-8 col-sm-offset-1">
+        <h4><%= @service.title %></h4>
+        <p><%= simple_format(@service.description) %></p>
     </div>
-  </div>
-  </div>
+    <div class="col-sm-11">
+        <div class="pull-right">
+            <a href="#" data-toggle="modal" data-target="#appointment" class="btn btn-lg pull-right">Make an Appointment</a>
+            <div class="modal fade" id="appointment" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+                <div class="modal-dialog" role="document">
+                    <div class="loginmodal-container">
+                        <%= simple_form_for [@service, @appointment] do |f| %>
+                        <%= f.error_notification %>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="text-center">Book
+                            <%= @service.title %></h4>
+                        <div class="form-inputs">
+                            <%= f.input :booking_name%>
+                            <%= f.input :booking_phone %>
+                            <%= f.input :booking_email %>
+                            <%= f.input :booking_time , as: :date %>
+                            <div class="form-actions">
+                                <%= f.submit "Submit", disable_with: "Submiting...", class: "btn btn-primary"%>
+                            </div>
+                            <% end %>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row comment">
+        <div class="col-sm-10 col-sm-offset-1">
+            <h3 class="comments_title">
+                <%= @service.comments.count %>
+                Comments
+            </h3>
+            <hr>
+            <div id="comments">
+                <%= render @service.comments%>
+                <hr>
+                <%= render "comments/form"%>
+            </div>
+        </div>
+    </div>
+
+    <!-- 以下代码为预约弹窗代码 -->
