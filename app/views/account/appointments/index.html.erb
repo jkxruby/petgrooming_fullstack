@@ -11,6 +11,7 @@
                     <th>Phone</th>
                     <th>Email</th>
                     <th>Booking Time</th>
+                    <th>State</th>
                     <th>Option</th>
 
                 </tr>
@@ -31,7 +32,12 @@
                     <td>
                         <%= appointment.booking_time.strftime("%d %b. %Y") %>
                     </td>
-                    <td><%= link_to("申请取消预约", apply_to_quit_account_appointment_path(appointment), method: :post, class: "btn btn-sm") %></td>
+                    <td><%= appointment.aasm_state %></td>
+                    <td>
+                      <%= render "account/appointments/state_option", appointment: appointment %>
+
+
+                    </td>
                 </tr>
                 <% end %>
 

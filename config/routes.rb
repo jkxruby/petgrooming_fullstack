@@ -7,7 +7,7 @@ Rails.application.routes.draw do
    resources :orders
    resources :appointments do
      member do
-       post :apply_to_quit
+       post :apply_to_cancel
      end
    end
  end
