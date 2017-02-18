@@ -6,12 +6,13 @@
             <thead>
                 <tr>
                     <th>#</th>
+                    <th>state</th>
                     <th>Service</th>
                     <th>Name</th>
                     <th>Phone</th>
                     <th>Email</th>
                     <th>Booking Time</th>
-
+                    <th>Option</th>
                 </tr>
             </thead>
             <tbody>
@@ -21,6 +22,7 @@
                     <td>
                         <%= appointment.id %>
                     </td>
+                    <td><%= appointment.aasm_state %></td>
                     <td>
                         <%= appointment.service.title %>
                       </td>
@@ -30,6 +32,7 @@
                     <td>
                         <%= appointment.booking_time.strftime("%d %b. %Y") %>
                     </td>
+                    <td> <%= render "admin/appointments/state_option", appointment: appointment %></td>
                 </tr>
                 <% end %>
 

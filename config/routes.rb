@@ -16,7 +16,13 @@ Rails.application.routes.draw do
     resources :products
     resources :services
     resources :categories
-    resources :appointments
+    resources :appointments do
+      member do
+        post :deal
+        post :confirm
+        post :cancel
+      end
+    end
   end
 
   resources :products do

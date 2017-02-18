@@ -7,8 +7,10 @@ class AppointmentsController < ApplicationController
     @appointment = Appointment.new(appointment_params)
     @appointment.service = @service
     @appointment.user = current_user
+    @appointment.make_appointment!
 
     if @appointment.save
+
       redirect_to service_path(@service), notice: "You have Booked Successfully"
     else
       redirect_to service_path(@service), alert: "You have to complete the whole form"
