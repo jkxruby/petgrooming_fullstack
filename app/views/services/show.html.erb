@@ -54,13 +54,13 @@
                         <%= simple_form_for [@service, @appointment] do |f| %>
                         <%= f.error_notification %>
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="text-center">Book
-                            <%= @service.title %></h4>
+                        <h4 class="text-center">Booking Application</h4>
                         <div class="form-inputs">
                             <%= f.input :booking_name%>
                             <%= f.input :booking_phone %>
                             <%= f.input :booking_email %>
                             <%= f.input :booking_time , as: :date %>
+                          </div>
                             <div class="form-actions">
                                 <%= f.submit "Submit", disable_with: "Submiting...", class: "btn btn-primary"%>
                             </div>

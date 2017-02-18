@@ -19,6 +19,8 @@
  @import "bootstrap";
  @import "font-awesome";
 
+
+
  .navbar-brand > img {
    display: inline-block;
    margin-right: 10px;
@@ -159,7 +161,19 @@
 
 footer {
   background-color: #482f30;
-  padding: 35px;
+  padding: 15px;
+  position: absolute;
+  bottom:0;
+  width: 100%;
+  height: 80px;
+}
+body {
+  margin-bottom: 100px;
+}
+
+html{
+  position:relative;
+  min-height:100%;
 }
 footer p {
   color: #e4e4e4;
