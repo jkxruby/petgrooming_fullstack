@@ -5,7 +5,11 @@ Rails.application.routes.draw do
 
   namespace :account do
    resources :orders
-   resources :appointments
+   resources :appointments do
+     member do
+       post :apply_to_quit
+     end
+   end
  end
 
   namespace :admin do
