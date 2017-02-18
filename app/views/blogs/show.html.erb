@@ -1,0 +1,5 @@
+<h2><%= @blog.title %></h2><br>
+     <% if @blog.image.present? %>
+        <%= image_tag(@blog.image.medium.url, class: "medium, image_responsive") %>
+     <% end %><br>       
+<%= @blog.description  %>
