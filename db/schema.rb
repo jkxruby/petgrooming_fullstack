@@ -10,7 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170217070403) do
+ActiveRecord::Schema.define(version: 20170218142308) do
+
+  create_table "appointments", force: :cascade do |t|
+    t.string   "booking_name"
+    t.integer  "booking_phone"
+    t.integer  "user_id"
+    t.integer  "service_id"
+    t.datetime "booking_time"
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
+    t.string   "booking_email"
+    t.string   "aasm_state",    default: "order_placed"
+    t.boolean  "is_booked",     default: false
+    t.index ["aasm_state"], name: "index_appointments_on_aasm_state"
+  end
 
   create_table "cart_items", force: :cascade do |t|
     t.integer  "cart_id"

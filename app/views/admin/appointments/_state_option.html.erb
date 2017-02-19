@@ -1,0 +1,19 @@
+<div>
+  <% case appointment.aasm_state %>
+  <% when "booked" %>
+    <%= link_to("取消预约", cancel_admin_appointment_path(appointment), class: "btn btn-default btn-sm", method: :post) %>
+    <%= link_to("处理", deal_admin_appointment_path(appointment), class: "btn btn-default btn-sm", method: :post) %>
+
+  <% when "confirming" %>
+  <%= link_to("取消预约", cancel_admin_appointment_path(appointment), class: "btn btn-default btn-sm", method: :post) %>
+  <%= link_to("确认", confirm_admin_appointment_path(appointment), class: "btn btn-default btn-sm", method: :post) %>
+
+  <% when "confirmed" %>
+  <%= link_to("取消预约", cancel_admin_appointment_path(appointment), class: "btn btn-default btn-sm", method: :post) %>
+
+  <% when "appointment_cancelled" %>
+    <span class="label label-default">预约已取消</span>
+
+    <% end %>
+
+</div>

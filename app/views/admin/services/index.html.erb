@@ -1,4 +1,4 @@
-<h2> Service List </h2>
+<h2 class="text-center"> Service List </h2>
 <div class="pull-right" style="padding-bottom: 20px;">
   <%= link_to("新增服务", new_admin_service_path, class: "btn btn-primary btn-sm") %>
 </div>
@@ -30,7 +30,6 @@
         </td>
         <td>
           <%= link_to("Edit", edit_admin_service_path(service)) %> |
-          <%= link_to("Destroy", admin_service_path(service), method: :delete, data: { :confirm => "Are you sure?"}) %>
         </td>
       </tr>
     <% end %>
