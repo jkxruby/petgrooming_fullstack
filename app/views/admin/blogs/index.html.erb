@@ -1,0 +1,32 @@
+<div class="row">
+    <div class="col-sm-10 col-sm-offset-1">
+    <div class="pull-right">
+        <h2><%=link_to("New Blog", new_admin_blog_path(@blog), class: "btn btn-primary")%></h2>
+    </div>
+    <table class="table table_borderd ">
+        <thead>
+            <th>#</th>
+            <th>title</th>
+            <th>image</th>
+            <th colspan="2">操作选项</th>
+        </thead>
+        <tbody>
+        <% @blogs.each do |blog| %>
+            <tr>
+                 <td><%= blog.id %></td>
+      	         <td><%= link_to(blog.title, blog_path(blog)) %></td>
+                 <td>   
+                    <% if blog.image.present? %>
+                      <%= image_tag(blog.image.thumb.url, class: "thumb") %>
+                    <% end %></td>
+                 <td><%= link_to("Edit", edit_admin_blog_path(blog))%></td>
+                 <td><%= link_to("Delete", admin_blog_path(blog), method: :delete, data: { :confirm => "Are you sure?"}) %></td>
+            </tr>
+        <% end %>
+        </tbody>
+    </table>
+    </div>
+
+
+
+</div>
