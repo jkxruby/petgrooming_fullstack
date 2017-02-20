@@ -12,6 +12,10 @@ class User < ApplicationRecord
   has_many :orders
   has_many :comments
   has_many :reviews
+
   has_many :blogs
   has_many :messages
+  
+  has_many :appointments
+
 end

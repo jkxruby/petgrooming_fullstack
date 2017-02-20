@@ -1,0 +1,7 @@
+<% case appointment.aasm_state %>
+<% when "booked","confirming","confirmed" %>
+
+<%= link_to("取消预约", apply_to_cancel_account_appointment_path(appointment), method: :post, class: "btn btn-sm") %>
+<% when "appointment_cancelled" %>
+<span class="label label-default">预约已取消</span>
+<% end %>

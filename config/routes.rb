@@ -5,6 +5,11 @@ Rails.application.routes.draw do
 
   namespace :account do
    resources :orders
+   resources :appointments do
+     member do
+       post :apply_to_cancel
+     end
+   end
  end
 
   namespace :admin do
@@ -13,6 +18,13 @@ Rails.application.routes.draw do
     resources :categories
     resources :blogs
     resources :topics
+    resources :appointments do
+      member do
+        post :deal
+        post :confirm
+        post :cancel
+      end
+    end
   end
 
   resources :products do
@@ -23,6 +35,7 @@ Rails.application.routes.draw do
   end
   resources :services do
     resources :comments
+    resources :appointments
   end
   resources :carts do
     collection do

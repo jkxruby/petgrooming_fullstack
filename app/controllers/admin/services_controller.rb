@@ -35,11 +35,6 @@ class Admin::ServicesController < ApplicationController
       end
   end
 
-  def destroy
-    @service = Service.find(params[:id])
-    @service.destroy
-    redirect_to admin_services_path, alert: "Service deleted"
-  end
 
 
   private
