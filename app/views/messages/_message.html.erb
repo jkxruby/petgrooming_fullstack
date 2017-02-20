@@ -1,0 +1,12 @@
+<div class="comments_wrapper clearfix">
+		<div class="pull-left">
+			<p class="lead"><%= message.body %></p>
+			<p><small>Submitted <strong><%= time_ago_in_words(message.created_at) %> ago</strong> by <%= message.user.email %></small></p>
+		</div>
+
+    	<div class="btn btn-group btn-default pull-right">
+		<% if message.user == current_user -%>
+			<%= link_to 'Delete', blog_message_path(@blog, message), method: :delete, data: { confirm: 'Are you sure to delete?' }%>
+		<% end %>
+	</div>
+</div>

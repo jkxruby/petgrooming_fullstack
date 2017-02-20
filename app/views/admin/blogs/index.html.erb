@@ -8,6 +8,7 @@
             <th>#</th>
             <th>title</th>
             <th>image</th>
+            <th>topic</th>
             <th colspan="2">操作选项</th>
         </thead>
         <tbody>
@@ -19,6 +20,7 @@
                     <% if blog.image.present? %>
                       <%= image_tag(blog.image.thumb.url, class: "thumb") %>
                     <% end %></td>
+                 <td><%= blog.topic.name %>
                  <td><%= link_to("Edit", edit_admin_blog_path(blog))%></td>
                  <td><%= link_to("Delete", admin_blog_path(blog), method: :delete, data: { :confirm => "Are you sure?"}) %></td>
             </tr>

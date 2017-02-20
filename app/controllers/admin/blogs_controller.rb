@@ -7,6 +7,7 @@ class Admin::BlogsController < ApplicationController
 
 	def new
 		@blog = Blog.new
+		@topics = Topic.all.map {|c| [c.name, c.id]}
 	end
 
 	def show
@@ -19,6 +20,7 @@ class Admin::BlogsController < ApplicationController
 
 	def create
 		@blog = Blog.new(blog_params)
+		@blog.topic_id = params[:topic_id]
 		@blog.user = current_user
 		if @blog.save
 			redirect_to admin_blogs_path
@@ -44,6 +46,6 @@ class Admin::BlogsController < ApplicationController
 
 	private
 	def blog_params
-		params.require(:blog).permit(:title,:description,:sketch,:image)
+		params.require(:blog).permit(:title,:description,:sketch,:image,:topic_id)
 	end  
 end

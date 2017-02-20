@@ -1,16 +1,37 @@
 <div class="row blog">
     <div class="col-sm-8 blogindex">
+
         <% @blogs.each do |blog| %>
       	     <h2><%= link_to(blog.title, blog_path(blog), class: "blogtitle") %></h2><br>
              <span>Post at <%=time_tag( blog.created_at )%></span><br>
+             <h6>Topic: <%= blog.topic.name %></h6>
                 <% if blog.image.present? %>
                     <%= image_tag(blog.image.url) %>
                 <% end %><br>       
             <p><%= blog.sketch %></p>
         <% end %>
     </div>
-    <div class="sidebar col-md-2">
-        <h2>Categories</h2>
+    <div class="sidebar col-sm-2">
+        <div class="topic">
+                            <h4 class="text-center">Topics</h4>
+                            <ul class="text-center list-unstyled">
+                                <li>
+                                    <p>
+                                        <span class="fa fa-caret-right"></span>
+                                        <%= link_to("All Blogs", blogs_path, :style => 'color:#fff; font-size:14px; text-decoration:none;') %>
+                                    </p>
+                                </li>
+                                <% Topic.all.each do |topic| %>
+                                <li>
+                                    <p>
+                                        <span class="fa fa-caret-right"></span>
+                                        <%= link_to topic.name, blogs_path(Topic: topic.name), class: "link", :style => 'color:#fff; font-size:14px; text-decoration:none;' %>
+                                    </p>
+                                </li>
+                                <% end %>
+
+                            </ul>
+        </div>
     </div>
 
 </div>

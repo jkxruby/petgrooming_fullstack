@@ -1,7 +1,12 @@
 class BlogsController < ApplicationController
 	before_action :authenticate_user!
 	def index
-		@blogs = Blog.all 
+    	if params[:topic].blank?
+      		@blogs = Blog.all
+   		else
+      		@topic_id = Topic.find_by(name: params[:topic]).id
+      		@blogs = Blog.where(:topic_id => @topic_id)
+    	end
 	end
 
 	def show

@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     resources :services
     resources :categories
     resources :blogs
+    resources :topics
   end
 
   resources :products do
