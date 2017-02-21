@@ -16,6 +16,8 @@ Rails.application.routes.draw do
     resources :products
     resources :services
     resources :categories
+    resources :blogs
+    resources :topics
     resources :appointments do
       member do
         post :deal
@@ -46,5 +48,8 @@ Rails.application.routes.draw do
 
   resources :cart_items
   resources :orders
+  resources :blogs do
+    resources :messages
+  end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
