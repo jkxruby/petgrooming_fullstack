@@ -1,0 +1,7 @@
+<%= simple_form_for([@blog, @blog.messages.build]) do |f|%>
+
+  <div class="field">
+      <%= f.text_area :body, class: "form-control" %>
+  </div>
+  <%= f.submit "Add a comment", class: "btn btn-primary" %>
+<% end %>
