@@ -31,10 +31,12 @@ Rails.application.routes.draw do
     end
     resources :reviews
   end
+
   resources :services do
     resources :comments
     resources :appointments
   end
+
   resources :carts do
     collection do
       delete :clean
