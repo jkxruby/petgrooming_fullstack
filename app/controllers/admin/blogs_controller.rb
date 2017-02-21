@@ -1,8 +1,9 @@
 class Admin::BlogsController < ApplicationController
     before_action :authenticate_user!
     before_action :admin_required
+    layout "admin"
 	def index
-		@blogs = Blog.all 
+		@blogs = Blog.all
 	end
 
 	def new
@@ -47,5 +48,5 @@ class Admin::BlogsController < ApplicationController
 	private
 	def blog_params
 		params.require(:blog).permit(:title,:description,:sketch,:image,:topic_id)
-	end  
+	end
 end

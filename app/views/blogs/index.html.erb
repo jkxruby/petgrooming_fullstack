@@ -3,11 +3,11 @@
 
         <% @blogs.each do |blog| %>
       	     <h2><%= link_to(blog.title, blog_path(blog), class: "blogtitle") %></h2><br>
-             <span>Post at <%=time_tag( blog.created_at )%></span><br>
+             <span>Post at <%= blog.created_at.strftime("%d %b. %Y") %></span><br>
              <h6>Topic: <%= blog.topic.name %></h6>
                 <% if blog.image.present? %>
-                    <%= image_tag(blog.image.url) %>
-                <% end %><br>       
+                    <%= image_tag(blog.image.medium.url) %>
+                <% end %><br>
             <p><%= blog.sketch %></p>
         <% end %>
     </div>

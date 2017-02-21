@@ -1,29 +1,35 @@
 <div class="row">
-<div class="col-sm-8 col-sm-offset-2">
-<h2> New Article </h2>
+    <div class="col-sm-8 col-sm-offset-2">
+        <h2>
+            New Article
+        </h2>
 
-<%= simple_form_for [:admin, @blog] do |f| %>
+        <%= simple_form_for [:admin, @blog] do |f| %>
 
-  <div class="group">
-    <%= f.input :title %>
-  </div>
+        <div class="group">
+            <%= f.input :title %>
+        </div>
 
-  <div class="group">
-    <%= f.input :sketch %>
-  </div>
+        <div class="group">
+            <%= f.input :sketch %>
+        </div>
 
-  <div class="group">
-    <%= f.input :description %>
-  </div>
+        <div class="group">
+            <%= f.input :description %>
+        </div>
 
-  <div class="group">
-    <%= f.input :image, as: :file %>
-  </div>
+        <div class="group">
+            <%= f.input :image, as: :file %>
+        </div>
+        <div class="group">
+            <%= select_tag(:topic_id, options_for_select(@topics), :prompt=>"Topics")%>
+        </div>
+        <br>
+        <div class="submit">
 
-  <%= select_tag(:topic_id, options_for_select(@topics), :prompt=>"Topics")%>
+            <%= f.submit "Submit", data: { disable_with: "Submitting..." } %>
+        </div>
 
-  <%= f.submit "Submit", data: { disable_with: "Submitting..." } %>
-
-<% end %>
-</div>
+        <% end %>
+    </div>
 </div>

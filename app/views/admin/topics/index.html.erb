@@ -1,0 +1,32 @@
+<h2 class="text-center">Topic List</h2>
+
+<div class="row">
+    <div class="col-sm-3 col-sm-offset-9">
+        <%=link_to("New Topic", new_admin_topic_path, class: "btn btn-default") %>
+    </div>
+
+    <div class="table">
+        <table class="table table-boldered">
+            <thead>
+                <tr>
+                    <th>name</th>
+                    <th>option</th>
+                </tr>
+            </thead>
+            <tbody>
+              <% @topics.each do |topic| %>
+
+                <tr>
+                    <td>
+                        <%= topic.name %></td>
+                    <td>
+                        <%= link_to("Edit", edit_admin_topic_path(topic), class: "btn btn-sm btn-default") %></td>
+                    <td>
+                        <%= link_to("Delete", admin_topic_path(topic), method: :delete, class: "btn btn-sm btn-default", data: { confirm: "Are you sure?"}) %></td>
+                </tr>
+                <% end %>
+
+            </tbody>
+        </table>
+    </div>
+</div>

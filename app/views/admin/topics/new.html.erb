@@ -1,0 +1,12 @@
+<h2>New topic</h2>
+
+<%= simple_form_for [:admin, @topic] do |f| %>
+
+<div class="group">
+  <%= f.input :name %>
+</div>
+
+<div class="submit">
+  <%= f.submit "Submit", data: { disable_with: "Submitting"} %>
+</div>
+<% end %>
