@@ -16,11 +16,11 @@
             <%= render "common/navbar" %>
             <%= render "common/flashes" %>
             <div class="location">
-              <div class="locationcontent">
-                <p>
-                    Pets Grooming
-                </p>
-              </div>
+                <div class="locationcontent">
+                    <p>
+                        Pets Grooming
+                    </p>
+                </div>
             </div>
 
             <div class="blog">
@@ -28,15 +28,29 @@
                     <%= yield %>
                 </div>
                 <div class="blogsidebar bg-color1">
-                    <h3 class="text-center">All Topics</h3>
-                    <p class="text-center">Topic 1</p>
-                </div>
-            </div>
-        </div>
+                    <h3 class="text-center">
+                        <span class="fa fa-caret-right" style="font-size:14px; color:#f7aa45;"></span>
+                        <%= link_to("All Topics", blogs_path, :style => 'color:#fff; font-size:18px; text-decoration:none;') %>
+                    </p>
+                </h3>
 
-        <div class="container-fluid">
-            <%= render "common/footer" %>
+                <p class="text-center">
+                    <% Topic.all.each do |topic| %>
 
+                    <span class="fa fa-caret-right" style="font-size:14px; color:#f7aa45;"></span>
+                    <%= link_to topic.name, blogs_path(topic: topic.name), :style => 'color:#fff; font-size:14px; text-decoration:none;' %>
+                    <br>
+                    <% end %>
+                </p>
+
+            </p>
         </div>
-    </body>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <%= render "common/footer" %>
+
+</div>
+</body>
 </html>

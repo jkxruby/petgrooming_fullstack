@@ -3,4 +3,6 @@ class Blog < ApplicationRecord
 	belongs_to :user
 	belongs_to :topic
 	has_many :messages
+
+	scope :recent, -> { order("created_at DESC")}
 end

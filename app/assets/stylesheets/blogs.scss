@@ -1,85 +1,127 @@
 // Place all the styles related to the blogs controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
 .bg-color1 {
-  background: #482f30;
+    background: #482f30;
 }
 
 .location {
-  width: 100%;
-  height: 60px;
-  background-color: #f7f3e7;
-  margin-top: 0;
+    width: 100%;
+    height: 60px;
+    background-color: #f7f3e7;
+    margin-top: 0;
 }
+
 .locationcontent {
-  margin: 0px auto;
-  width: 960px;
+    margin: 0 auto;
+    width: 960px;
 }
+
 .locationcontent p {
-  float: left;
-  line-height: 60px;
-  position: absolute;
-  font-size: 1.3em;
-  color: black;
+    float: left;
+    line-height: 60px;
+    position: absolute;
+    font-size: 1.3em;
+    color: black;
 }
 
 .blog {
-  width: 1200px;
-  margin: 50px auto;
+    width: 1200px;
+    margin: 50px auto;
 }
 
 .blogtitle {
-  text-decoration: none !important;
+    text-decoration: none !important;
 }
+
 .blogcontent {
-  float:left;
-  margin-top: 40px;
-  margin-bottom: 40px;
+    float: left;
+    margin-top: 40px;
+    margin-bottom: 40px;
 }
+
 .blogsidebar {
-  float:right;
-  margin-top: 50px;
-  width: 200px;
-  height: 2000px;
+    float: right;
+    margin-top: 50px;
+    width: 200px;
+    height: 2000px;
 }
 
 .blogsidebar h3 {
-  margin-top: 50px;
-  font-size: 1.5em;
-  color: #ffffff;
+    margin-top: 50px;
+    font-size: 1.5em;
+    color: #ffffff;
 }
 
 .blogsidebar p {
-  font-size: 1.2em;
-  color: #ffffff;
+    font-size: 1.2em;
+    color: #ffffff;
 }
 
 .blogdetail {
-  width: 700px;
-  height: 50px;
-}
-.blogtag {
-  float: left;
-  margin-right: 50px;
-  line-height: 50px;
-}
-.blogsketch {
-  height: 100px;
-  width: 700px;
-  line-height: 100px;
+    width: 700px;
+    height: 50px;
 }
 
+.blogtag {
+    float: left;
+    margin-right: 50px;
+    line-height: 50px;
+}
+
+.blogsketch {
+    height: 100px;
+    width: 700px;
+    line-height: 100px;
+}
 
 .blogbutton .btn {
-  border: none;
-  border-radius: 20px; /*圆角20px*/
-  width: 140px;
-  height: 40px;
+    border: none;
+    border-radius: 20px;
+    /*圆角20px*/
+    width: 140px;
+    height: 40px;
 }
 
 .line {
-  background: #e4e7e8;
-  margin-top: 50px;
-  width: 800px;
-  height: 1px;
+    background: #e4e7e8;
+    margin-top: 50px;
+    width: 800px;
+    height: 1px;
 }
+
+.pagination {
+    padding: 3px;
+    margin: 3px;
+}
+
+.pagination a {
+    padding: 2px 5px;
+    margin: 2px;
+    border: 1px solid #aaaadd;
+    text-decoration: none;
+    color: #f6ab4a;
+}
+
+.pagination a:active,
+.pagination a:hover {
+    border: 1px solid #f6ab4a;
+    color: #f6ab4a;
+}
+
+.pagination span.current {
+    padding: 2px 5px;
+    margin: 2px;
+    border: 1px solid #000099;
+    font-weight: bold;
+    background-color: #000099;
+    color: #FFF;
+}
+
+.pagination span.disabled {
+    padding: 2px 5px 2px 5px;
+    margin: 2px;
+    border: 1px solid #eee;
+    color: #ddd;
+  }
