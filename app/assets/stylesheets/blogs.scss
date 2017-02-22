@@ -66,6 +66,7 @@
 
 .blogtag {
     float: left;
+    width: 300px;
     margin-right: 50px;
     line-height: 50px;
 }
@@ -124,4 +125,20 @@
     margin: 2px;
     border: 1px solid #eee;
     color: #ddd;
+  }
+
+
+  .blogimage-show {
+    width: 800px;
+    margin-top: 30px;
+  }
+
+  .blogdescription-show {
+    width: 800px;
+  }
+
+  .line3 {
+    height: 10px;
+    width: 800px;
+    margin-bottom: 100px;
   }

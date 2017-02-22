@@ -1,25 +1,30 @@
 <h2><%= @blog.title %></h2><br>
-<div class="blogdetail">
+<div class="blogdetail-show">
     <p class="blogtag">Post at
         <%= @blog.created_at.strftime("%d %b. %Y") %></p>
     <p class="blogtag">Topic:
         <%= @blog.topic.name %></p>
 </div>
-<div class="blogimage">
-<% if @blog.image.present? %>
-<%= image_tag(@blog.image.url) %>
-<% end %>
+<div class="blogimage-show">
+  <div class="blogimage">
+    <% if @blog.image.present? %>
+    <%= image_tag(@blog.image.url) %>
+    <% end %>
+  </div>
 </div>
-<br>
-<p><%= simple_format(@blog.description)  %></p>
-<br>
-<br>
-<h3>
-	<%= @blog.messages.count %>
-	Comments
-</h3>
-<hr>
+<div class="blogdescription-show">
+    <p><%= simple_format(@blog.description)  %></p>
+</div>
+
+<div class="line3">
+</div>
+
 <div id="comments">
-	<%= render @blog.messages%>
-	<%= render "messages/form"%>
+    <h3>
+        <%= @blog.messages.count %>
+        Comments
+    </h3>
+    <hr>
+    <%= render @blog.messages%>
+    <%= render "messages/form"%>
 </div>
