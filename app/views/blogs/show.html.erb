@@ -1,41 +1,25 @@
-<div class="row">
-	<div class="col-md-8 blogshow">
-		<h2><%= @blog.title %></h2><br>
-     		<% if @blog.image.present? %>
-        	<%= image_tag(@blog.image.url) %>
-     	<% end %><br>       
-		<p><%= simple_format(@blog.description)  %></p>
-		<h3>
-      	<%= @blog.messages.count %> Comments
-    	</h3>
-    	<hr>
-    	<div id="comments">
-      		<%= render @blog.messages%>
-      		<%= render "messages/form"%>
-    	</div>
-
-	</div>
-    <div class="sidebar col-sm-2">
-        <div class="topic">
-                            <h4 class="text-center">Topics</h4>
-                            <ul class="text-center list-unstyled">
-                                <li>
-                                    <p>
-                                        <span class="fa fa-caret-right"></span>
-                                        <%= link_to("All Blogs", blogs_path, :style => 'color:#fff; font-size:14px; text-decoration:none;') %>
-                                    </p>
-                                </li>
-                                <% Topic.all.each do |topic| %>
-                                <li>
-                                    <p>
-                                        <span class="fa fa-caret-right"></span>
-                                        <%= link_to topic.name, blogs_path(Topic: topic.name), class: "link", :style => 'color:#fff; font-size:14px; text-decoration:none;' %>
-                                    </p>
-                                </li>
-                                <% end %>
-
-                            </ul>
-        </div>
-    </div>
-
+<h2><%= @blog.title %></h2><br>
+<div class="blogdetail">
+    <p class="blogtag">Post at
+        <%= @blog.created_at.strftime("%d %b. %Y") %></p>
+    <p class="blogtag">Topic:
+        <%= @blog.topic.name %></p>
+</div>
+<div class="blogimage">
+<% if @blog.image.present? %>
+<%= image_tag(@blog.image.url) %>
+<% end %>
+</div>
+<br>
+<p><%= simple_format(@blog.description)  %></p>
+<br>
+<br>
+<h3>
+	<%= @blog.messages.count %>
+	Comments
+</h3>
+<hr>
+<div id="comments">
+	<%= render @blog.messages%>
+	<%= render "messages/form"%>
 </div>

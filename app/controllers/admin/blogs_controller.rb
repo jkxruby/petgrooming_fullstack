@@ -17,6 +17,7 @@ class Admin::BlogsController < ApplicationController
 
 	def edit
 		@blog = Blog.find(params[:id])
+    @topics = Topic.all.map {|c| [c.name, c.id]}
 	end
 
 	def create
@@ -43,6 +44,7 @@ class Admin::BlogsController < ApplicationController
 		@blog = Blog.find(params[:id])
 		@blog.destroy
 		flash[:alert]="Blog has deleted!"
+    redirect_to admin_blogs_path
 	end
 
 	private

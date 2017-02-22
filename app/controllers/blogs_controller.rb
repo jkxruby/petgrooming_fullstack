@@ -1,5 +1,6 @@
 class BlogsController < ApplicationController
-	before_action :authenticate_user!
+	layout 'blog'
+
 	def index
     	if params[:topic].blank?
       		@blogs = Blog.all

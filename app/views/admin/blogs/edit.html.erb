@@ -14,13 +14,18 @@
     <%= f.input :description %>
   </div>
 
-  <div class="group">
-    <%= f.input :image, as: :file %>
-  </div>
+  <% if @blog.image.present? %>
+  <span>目前商品图</span>
+  <br>
+  <%= image_tag(@blog.image.thumb.url) %>
+  <% end %>
 
+  <div class="group">
+      <%= f.input :image, as: :file %>
+  </div>
+  
    <%= f.select :topic_id, @topics %>
-   <br>
-   <br>
+
   <%= f.submit "Submit", data: { disable_with: "Submitting..." } %>
 
 <% end %>
