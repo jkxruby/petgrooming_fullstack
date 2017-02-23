@@ -4,20 +4,31 @@
         <%= @blog.created_at.strftime("%d %b. %Y") %></p>
     <p class="blogtag">Topic:
         <%= @blog.topic.name %></p>
+
+    <div class="blogtag">
+        <%= link_to like_blog_path(@blog), method: :put, class: "btn btn-default btn-sm" do %>
+        <span class="glyphicon glyphicon-chevron-up"></span>Like
+        <%= @blog.get_upvotes.size %>
+        <% end %>
+        <%= link_to dislike_blog_path(@blog), method: :put, class: "btn btn-default btn-sm" do %>
+        <span class="glyphicon glyphicon-chevron-down"></span>Dislike
+        <%= @blog.get_downvotes.size %>
+        <% end %>
+
+    </div>
 </div>
 <div class="blogimage-show">
-  <div class="blogimage">
-    <% if @blog.image.present? %>
-    <%= image_tag(@blog.image.url) %>
-    <% end %>
-  </div>
+    <div class="blogimage">
+        <% if @blog.image.present? %>
+        <%= image_tag(@blog.image.url) %>
+        <% end %>
+    </div>
 </div>
 <div class="blogdescription-show">
     <p><%= simple_format(@blog.description)  %></p>
 </div>
 
-<div class="line3">
-</div>
+<div class="line3"></div>
 
 <div id="comments">
     <h3>

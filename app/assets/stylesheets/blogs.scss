@@ -66,9 +66,15 @@
 
 .blogtag {
     float: left;
-    width: 300px;
+    width: 150px;
     margin-right: 50px;
     line-height: 50px;
+}
+.blogtag a {
+  color: white;
+}
+.blogtag a:hover {
+  color: red;
 }
 
 .blogsketch {

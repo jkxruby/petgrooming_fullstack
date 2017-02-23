@@ -1,4 +1,5 @@
 class BlogsController < ApplicationController
+	before_action :authenticate_user!, only: [:upvote, :downvote]
 	layout 'blog'
 
 	def index
@@ -16,6 +17,18 @@ class BlogsController < ApplicationController
 		@blog = Blog.find(params[:id])
 	end
 
+
+	def upvote
+		@blog = Blog.find(params[:id])
+		@blog.upvote_by current_user
+		redirect_to :back
+	end
+
+	def downvote
+		@blog = Blog.find(params[:id])
+		@blog.downvote_by current_user
+		redirect_to :back
+	end
 
 	private
 	def blog_params
