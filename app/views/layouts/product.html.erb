@@ -28,7 +28,7 @@
                 <div class="col-sm-3">
                     <%= form_tag search_products_path, method: :get, class: "navbar-form", role: "search" do %>
                     <p>
-                        <%= text_field_tag :search, params[:search], class: "form-control" %>
+                        <%= text_field_tag :search, params[:search], class: "form-control", placeholder: "search title" %>
                         <%= submit_tag "Search", name:nil, class: "btn btn-default" %>
                     </p>
                     <% end %>
