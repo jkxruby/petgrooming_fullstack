@@ -18,9 +18,20 @@
                 <div class="col-sm-2 col-sm-offset-2">
                     <h4>Product</h4>
                 </div>
-                <div class="col-sm-2 col-sm-offset-5 text-center">
+
+
+                <div class="col-sm-1 col-sm-offset-4">
                     <h5 class="home_link"><%= link_to("Home", root_path, :style => 'color: #f4ad53;') %>
                         > product</h5>
+                </div>
+
+                <div class="col-sm-3">
+                    <%= form_tag search_products_path, method: :get, class: "navbar-form", role: "search" do %>
+                    <p>
+                        <%= text_field_tag :search, params[:search], class: "form-control" %>
+                        <%= submit_tag "Search", name:nil, class: "btn btn-default" %>
+                    </p>
+                    <% end %>
                 </div>
             </div>
             <div class="row">
@@ -29,6 +40,8 @@
                         <br>
                         <h4 class="text-center product_link" style="text-decoration: none;"><%= link_to("All the Product", products_path) %></h4>
                         <br>
+
+
 
                         <h4 class="text-center basket">
                             <%= link_to carts_path do  %>
@@ -65,7 +78,7 @@
                     </div>
 
                     <div class="col-md-8 product-content">
-                      <%= render "common/flashes" %>
+                        <%= render "common/flashes" %>
                         <%= yield %>
                     </div>
 
